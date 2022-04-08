@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>The get position is the position for the next read operation. The put
+      position is the position for the next write operation.</P>
+    
+    <P>Normally the put position is at the end of the file, and the get
+      position starts at the beginning of the file. <TT>fs.seekg(n, ios::beg);</TT>
+      moves the get positions to character n counted from the beginning of the
+      file fs, while <TT>fs.seekp(n, ios::beg);</TT> does the same for put.
+    </P>
+    
+    <P>You can determine their current position with:</P>
+
+<PRE>     long n = fs.tellg();
+     or
+     long n = fs.tellp();
+				</PRE>
+    
+    <P>The number returned by the <TT>tellg()</TT> and <TT>tellp()</TT>
+      functions is of type long because file sizes can be quite large, and an
+      integer may not suffice to express a file position.</P>
+  </BODY>
+</HTML>

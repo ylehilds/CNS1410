@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<pre>
+CREATE TABLE people 
+(
+  name              CHAR(30),
+  driverLicenseNo   CHAR(8) PRIMARY KEY,
+  address           CHAR(100)
+)
+
+CREATE TABLE cars
+(
+  vid        INTEGER PRIMARY KEY,
+  owner_dlno CHAR(8),    
+  mftype     CHAR(20),
+  ctype      CHAR(10),
+   year       DATE
+)
+</pre>
+</BODY>
+</HTML>

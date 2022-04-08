@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+int a;            // global scope
+int b;            // global scope
+
+int f(int c)      // local scope to f
+{  
+   int n = 0;     // local scope to f
+   a = c;
+   if (n &lt; c)
+      n = a + b;
+   return n;
+}
+
+int g(int c)     // local scope to f
+{  
+   int n = 0;    // local scope to f
+   int a = c;    // local scope to f
+   if (n &lt; f(c))
+      n = a + b;
+   return n;
+}
+
+int main()
+{  
+   int i = 1;      // local scope to main
+   int b = g(i);   // local scope to main
+   cout &lt;&lt; a + b + i &lt;&lt; &quot;\n&quot;;
+   return 0;
+}
+</PRE>
+    
+    <P> The output of this program is 3. </P>
+  </BODY>
+</HTML>

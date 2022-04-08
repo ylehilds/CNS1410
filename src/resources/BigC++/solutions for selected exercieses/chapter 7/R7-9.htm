@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+if ((a.get_start().get_x() == b.get_start().get_x() &amp;&amp; 
+      a.get_start().get_y() == b.get_start().get_y() &amp;&amp;
+      a.get_end().get_x() == b.get_end().get_x() &amp;&amp;
+      a.get_end().get_y() == b.get_end().get_y()) 
+   ||
+     (a.get_end().get_x() == b.get_start().get_x() &amp;&amp;
+      a.get_end().get_y() == b.get_start().get_y() &amp;&amp;         
+      a.get_start().get_x() == b.get_end().get_x() &amp;&amp;
+      a.get_start().get_y() == b.get_end().get_y()))
+            
+       cwin &lt;&lt; Message(Point(0,0), &quot;They look the same !&quot;);
+ 
+</PRE>
+  </BODY>
+</HTML>

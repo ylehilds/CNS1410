@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<pre>
+void operator + (Employee& name, double percentRaise)
+{
+  name.setSalary(name.getSalary() * percentRaise);
+}
+</pre>
+<p>
+No, this is probably not a good use of the operator. The increment operator does not intuitively imply this meaning.
+</BODY>
+</HTML>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>A loop with symmetric bounds which calculates a number's factorial </P>
+
+<PRE>cout &lt;&lt; &quot;Enter a number: &quot;;
+int n;
+cin &gt;&gt; n;
+double factorial = 1;
+for (i = 1; i &lt;= n; i++)
+   factorial = factorial * i
+</PRE>
+    
+    <P>An asymmetric bounded loop which determines the number of a's in a word
+    </P>
+
+<PRE>string s;
+cout &lt;&lt; &quot;Enter a word&quot;;
+cin &gt;&gt; s;
+int len = s.length();
+int count_a = 0;
+int i;
+for (i = 0; i &lt; len; i++)
+  if (s.substr(i,1) == &quot;a&quot;) 
+    count_a++;
+</PRE>
+  </BODY>
+</HTML>

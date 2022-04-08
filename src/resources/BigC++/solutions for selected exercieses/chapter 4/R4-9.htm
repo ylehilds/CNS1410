@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>cin &gt;&gt; quarters; 
+/* user types &quot;four&quot; */
+/* now cin has failed, and NO characters have been read */
+cout &lt;&lt; &quot;Bad input. Try again!&quot;;
+cin.clear();
+/* now the failure has been reset, and cin STILL contains the same characters */
+cin &gt;&gt; quarters;
+/* user types: 4 */
+/* now cin has the characters &quot;four4&quot; */
+/* cin STILL fails */
+</PRE>
+    
+    <P>To fix this problem takes more than just clearing the failed state--one
+      would also have to read all bad input. The strategy in the book--to read
+      the input with <TT>getline</TT>--is a better method for writing robust
+      programs. Moral: Don't trust books that are written by people who don't
+      code themselves.</P>
+  </BODY>
+</HTML>

@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<p>
+<pre>
+class Stack
+{
+public:
+   Stack();
+   double pop();
+   void push(double);
+   void set_handler(double(*ef)(string));
+private:
+   vector<double> data;
+   int top_index;
+   double (*error_fun)(string);
+};
+
+double default_handler(string message)
+{
+	throw logic_error("stack underflow");
+}
+</pre>
+<p>
+rest as in Section 19.2.6
+</BODY>
+</HTML>

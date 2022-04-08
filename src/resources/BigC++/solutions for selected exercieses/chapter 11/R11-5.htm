@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P> The derived class <TT>D</TT> attempts to access the private data field
+      <TT>b</TT> of the base class. But it has no right to access it. A
+      solution is to create a new member function for class B called get_b()
+      which returns the value of the private data b. </P>
+
+<PRE>
+    class B
+    {
+    public:
+        B();
+        B(int n);
+        void print() const;
+        int get_b() const; /* return the value of b */
+    private:
+        int b;
+    };
+
+    B::B() { b = 0; }
+    B::B(int n) { b = n; }
+    void B::print() const { cout &lt;&lt; &quot;B: &quot; &lt;&lt; b &lt;&lt; &quot;\n&quot;; }
+    int B::get_b() const { return b; }
+
+    class D : public B
+    {
+    public:
+        D();
+        D(int n);
+        void print() const;
+    private:
+    };
+
+    D::D() {}
+    D::D(int n) : B(n) {}
+    void D::print() const { cout &lt;&lt; &quot;D: &quot; &lt;&lt; get_b() &lt;&lt; &quot;\n&quot;; }
+</PRE>
+  </BODY>
+</HTML>

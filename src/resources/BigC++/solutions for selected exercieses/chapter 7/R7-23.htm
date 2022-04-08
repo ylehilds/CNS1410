@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>int s = 1;
+int n;
+for (n = 1; n &lt;= 5; n++)
+{  
+   s = s + n;
+   cout &lt;&lt; s &lt;&lt; &quot; &quot;;
+}
+</PRE>
+    
+    <P> prints 2 4 7 11 16 </P>
+
+<PRE>
+int s = 1;
+int n;
+for (n = 1; n &lt;= 5; cout &lt;&lt; s &lt;&lt; &quot; &quot;)
+{  
+   n = n + 2;
+   s = s + n;
+}
+</PRE>
+    
+    <P> prints 4 9 16 </P>
+
+<PRE>
+int s = 1;
+int n;
+for (n = 1; n &lt;= 5; n++)
+{  s = s + n;
+   n++;
+}
+cout &lt;&lt; s &lt;&lt; &quot; &quot; &lt;&lt; n;
+</PRE>
+    
+    <P> prints 10 7 </P>
+  </BODY>
+</HTML>

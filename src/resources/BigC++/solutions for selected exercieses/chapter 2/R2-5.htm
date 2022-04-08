@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>The first statement simply truncates the number at the decimal point.
+      The <TT>n = static_cast&lt;int&gt;(x + 0.5)</TT> assignment gives the
+      closest integer to x <I>provided</I> <TT>x</TT> <I>is positive</I>.
+    </P>
+    
+    <P>The result of the first and second are the same when, for x positive,
+      the decimal portion is less than .5. Both assignments round down.</P>
+    
+    <P>The result of the first and second are different when the decimal
+      portion is greater than or equal to .5. Then the first assignment rounds
+      down, the second one rounds up</P>
+    
+    <P>For x negative, the first assignment still drops the fractional part.
+      The second assignment, however, acts badly. It is always off by one from
+      the closest integer. Consider the case where the fractional part is &lt;
+      0.5, say -3.1. Adding 0.5 yields -2.6, and converting to an <TT>int</TT>
+      yields -2, and not -3, the closest integer. Now assume the fractional part
+      is &gt; 0.5, say -3.9. Adding 0.5 yields -3.4, and converting to an <TT>int</TT>
+      yields -3, and not -4, the closest integer. </P>
+  </BODY>
+</HTML>

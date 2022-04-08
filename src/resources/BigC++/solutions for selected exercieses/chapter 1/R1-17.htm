@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>Yes, if the interest earned is greater than or equal to the withdrawn
+      amount the balance will never reach zero. For example, a monthly interest
+      rate of  5 percent on $10,000 equals the $500 withdrawal, so every month
+      the balance will remain $10,000.
+    </P>
+    
+    <P>Changed algorithm</P>
+
+<PRE>
+
+	Step 1.	Prompt for an balance value, rate value, and withdraw amount value.
+
+	Step 2.	Start with the table
+
+			After month	Balance
+			0		balance value
+	
+ Step 3. If the balance value times the rate value / 12 / 100 is greater than the withdrawal amount, report that the account will never be depleted and quit.
+
+	Step 4.	Repeat steps 4a,..4c while  balance value is greater than 0 and balance value times rate value is greater than withdraw amount value.
+		Step 4a.	Add a new row to the table.
+		Step 4b.	In column 1 of the new row, put one more than 
+				the preceding month value.
+		Step 4c.	In column 2 of the new row, place the value of the
+				preceding balance value, multiplied by rate value / 12 / 100, then
+				subtract withdraw amount.
+
+	Step 3.	Divide the last number in the month column by 12, and report it as the 
+		number of years required to deplete the account.
+
+</PRE>
+  </BODY>
+</HTML>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+class Product
+{
+public:
+   Product();
+   Product(string n, double p, int s); /* new constructor */
+
+   bool is_better_than(Product b) const;
+   void print() const;
+
+private:
+   string name;
+   float price;
+   int score;
+};
+
+Product::Product(string n, double p, int s )
+{  
+   name = n;
+   price = p;
+   score = s;
+}
+
+Product read() /* new non-member function */
+{  
+   cout &lt;&lt; &quot;Please enter the model name: &quot;;
+   name = get_line(cin);
+
+   cout &lt;&lt; &quot;Please enter the price: &quot;;
+   price = floatvalue(get_line(cin));
+
+   cout &lt;&lt; &quot;Please enter the score: &quot;;
+   score = intvalue(get_line(cin));
+
+   return Product(name, price, score);
+}
+
+
+int main()
+{  
+   . . .
+   Product next;
+   next = read(); /* call non-member function */
+   . . .
+}
+
+</PRE>
+  </BODY>
+</HTML>

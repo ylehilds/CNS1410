@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>The &quot;loop and a half&quot; refers to the determination of the loop
+      termination condition in the middle of a loop. </P>
+
+<PRE>Approach #1 - Using a Boolean variable
+
+bool more = true
+while (more)
+{  
+   read employee name
+   if not OK, more = false
+   else
+   {  
+      read employee salary
+      if not OK, more = false
+      else
+      {  
+         give employee 5 percent raise
+         print employee data
+      }
+   }
+}
+
+Approach #2 - using a break
+
+while (true)
+{ 
+  read employee name
+  if not OK, break
+  read employee salary
+  if not OK, break
+  give employee 5 percent raise
+  print employee data
+}
+
+
+
+Approach #3 - using separate return statements
+
+while (true)
+{ 
+  read employee name
+  if not OK, return 0
+  read employee salary
+  if not OK, return 1
+  give employee 5 percent raise
+  print employee data
+}
+return 0
+</PRE>
+  </BODY>
+</HTML>

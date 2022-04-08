@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>An accessor function that is missing a <TT>const</TT> keyword in its
+      definition will still work as expected. However, there will be compiler
+      errors if another member function that has been properly declared as <TT>const</TT>
+      makes use of this function.</P>
+    
+    <P>If you accidentally supply the <TT>const</TT> keywork in a mutator
+      function, then a compile-time error will occur when the function attempts
+      to modify the object's data.</P>
+  </BODY>
+</HTML>

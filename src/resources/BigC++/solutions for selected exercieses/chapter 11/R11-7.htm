@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P> The calls <TT>pb-&gt;p()</TT>, <TT>pd-&gt;p()</TT> and <TT>pd2-&gt;p()</TT>
+      are dynamically bound since the function <TT>p</TT> is virtual, and it is
+      called through a pointer. All the other calls are statically bound. </P>
+
+<PRE>
+    B::p
+    B::q
+    D::p
+    D::q
+    B::p
+    B::q
+    D::p  &lt;-  note the result of pd-&gt;p()
+    B::q
+    D::p
+    D::q
+</PRE>
+  </BODY>
+</HTML>

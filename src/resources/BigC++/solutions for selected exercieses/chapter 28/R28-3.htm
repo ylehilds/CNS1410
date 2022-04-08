@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<pre>
+CREATE TABLE quiz
+(
+  qid        INTEGER   PRIMARY KEY,
+  title      CHAR(100)
+);
+
+CREATE TABLE problem
+(
+  pid        INTEGER   PRIMARY KEY,
+  question   CHAR(100),
+  answer     CHAR(100)
+);
+
+CREATE TABLE quiz_set
+(
+  qid        INTEGER   NOT NULL,
+  pid        INTEGER   NOT NULL,
+  PRIMARY KEY(qid, pid)
+);
+</pre>
+</BODY>
+</HTML>

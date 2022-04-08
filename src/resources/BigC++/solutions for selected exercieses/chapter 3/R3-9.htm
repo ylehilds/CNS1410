@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    <TABLE WIDTH="100%" BORDER="1">
+      <TR>
+        <TD><TT>Time now();</TT></TD>
+        <TD>Can't use <TT>()</TT> for default constructed variable</TD>
+      </TR>
+      <TR>
+        <TD><TT>Point p = (3,4);</TT></TD>
+        <TD>No constructor called, cannot assign (3,4) to left hand side.</TD>
+      </TR>
+      <TR>
+        <TD><TT>p.set_x(-1);</TT></TD>
+        <TD>No <TT>set_x(int)</TT> member function in Point class</TD>
+      </TR>
+      <TR>
+        <TD><TT>cout &lt;&lt; Time</TT></TD>
+        <TD>There is no defined method for Time objects to be output in this
+        way. </TD>
+      </TR>
+      <TR>
+        <TD><TT>Time due_date(2004, 4, 15);</TT></TD>
+        <TD>There are only hour, minutes, and seconds parameters for the Time
+        class' constructor. In particular the value for hours should be between
+        0 and 23</TD>
+      </TR>
+      <TR>
+        <TD><TT>due_date.move(2,12);</TT></TD>
+        <TD><TT>move(int, int)</TT> method not defined in Time class.</TD>
+      </TR>
+      <TR>
+        <TD><TT>seconds_from(millenium);</TT></TD>
+        <TD>The member method <TT>seconds_from(Time)</TT> is being called
+        without a implicit parameter. </TD>
+      </TR>
+      <TR>
+        <TD><TT>Employee harry(&quot;Hacker&quot;, &quot;Harry&quot;, 35000);</TT></TD>
+        <TD>The Employee constructor is being called with two strings and a
+        number. It will only accept one string, use <TT>Employee harry(&quot;Hacker,
+        Harry&quot;, 35000);</TT> instead</TD>
+      </TR>
+      <TR>
+        <TD><TT>harry.set_name(&quot;Hacker, Harriet&quot;);</TT></TD>
+        <TD><TT>set_name(string)</TT> is not a member function of class
+        Employee</TD>
+      </TR>
+    </TABLE>
+  </BODY>
+</HTML>

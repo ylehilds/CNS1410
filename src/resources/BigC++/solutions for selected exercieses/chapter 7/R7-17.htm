@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+int n;
+cin &gt;&gt; n;
+double x = 0;
+double s;
+s = 1.0 / (1 + n * n);
+n++;
+x = x + s;
+while (s &gt; 0.01)   
+{  
+   s = 1.0 / (1 + n * n);
+   n++;
+   x = x + s;
+}
+</PRE>
+  </BODY>
+</HTML>

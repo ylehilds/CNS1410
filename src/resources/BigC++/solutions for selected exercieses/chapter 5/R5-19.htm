@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>The problem is that in the <TT>false_swap2</TT> function the parameters
+      must be declared as <I>reference</I> parameters. The procedure in its
+      current form only swaps the values of the local variables <TT>a</TT> and
+      <TT>b</TT> without affecting <TT>x</TT> and <TT>y</TT>. The correct
+      version of <TT>false_swap2</TT> would be </P>
+
+<PRE>
+void swap2(int&amp; a, int&amp; b)
+{  
+   int temp = a;
+   a = b;
+   b = temp;
+}
+</PRE>
+  </BODY>
+</HTML>

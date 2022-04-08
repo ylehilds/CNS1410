@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+   Point p = cwin.get_mouse(&quot;Click inside the rectangle&quot;);
+   cwin &gt;&gt; p;      
+   bool x_inside = (x1 &lt;= p.get_x() &amp;&amp; p.get_x() &lt;= x2);   
+   bool y_inside = (y1 &lt;= p.get_y() &amp;&amp; p.get_y() &lt;= y2);   
+   if (x_inside &amp;&amp; y_inside)
+        cwin &gt;&gt; Message(p, &quot;Congratulations!&quot;);
+</PRE>
+  </BODY>
+</HTML>

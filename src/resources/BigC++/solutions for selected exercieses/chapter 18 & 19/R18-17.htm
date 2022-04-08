@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<p>
+As the following program will illustrate, the default assignment
+will copy any pointer values. This could mean that the same
+memory location would be deleted twice.  (And that anything
+previously contained in a value that is target for an assignment
+will not be deleted at all).
+<p>
+<pre>
+#include <iostream>
+#include <stdexcept>
+#include "trace.h"
+
+using namespace std;
+
+class Test {
+public:
+   Test(string n, int w);
+   ~Test();
+private:
+   string name;
+   int *p;
+};
+
+Test::Test(string n, int w) : name(n) 
+{ 
+   p = new int[1];
+   *p = w;
+}
+
+Test::~Test()
+{
+   cout << "recovering memory for " << name <<"\n";
+   cout << "value is " << *p << "\n";
+   delete p;
+}
+
+int main() {
+   Test a("a", 7);
+   Test b("b", 9);
+   b = a;
+   return 0;
+}
+</pre>
+</BODY>
+</HTML>

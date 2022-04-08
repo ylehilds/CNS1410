@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<P>
+In C++ you test the iterator against the end-of-collection iterator.
+There are two major advantages of this technique. First, it matches
+the behavior of ordinary pointers, which means that algorithms
+can be defined that work with both iterators and pointers. Second, 
+it makes it easy to define sub-collections of a collection. The
+disadvantage is that there are now two objects that must be
+manipulated (the starting and stopping iterator).  In the design
+pattern solution everything is encapsulated within one object.
+If the two objects are mismatched (say, from different collections),
+then great havoc can ensue.
+</BODY>
+</HTML>

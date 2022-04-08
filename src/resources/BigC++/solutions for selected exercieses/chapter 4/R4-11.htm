@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>An &quot;off by one&quot; error is a miscalculation of an integer
+      variable that is off by 1 or another small amount. An example of this
+      problem is illustrated as follows: </P>
+
+<PRE>/*  Prompt for a word and display the number of times the letter 'a' 
+     appears in the word
+*/
+string s;
+cout &lt;&lt; &quot;Enter a word&quot;;
+cin &gt;&gt; s;
+int len = s.length();
+int count_a = 0;
+int i = 1;
+while (i &lt; len)
+{
+   if (s.substr(i,1) == &quot;a&quot;) 
+    count_a++;
+   i++;
+}
+cout &lt;&lt; &quot;Letter a was found &quot; &lt;&lt; count_a &lt;&lt; &quot; times.\n&quot;;
+</PRE>
+    
+    <P>The above code has a problem. The loop doesn't check each letter in the
+      word. The first letter is skipped because the loop counter <TT>i</TT> is
+      set to 1, instead of 0. </P>
+  </BODY>
+</HTML>

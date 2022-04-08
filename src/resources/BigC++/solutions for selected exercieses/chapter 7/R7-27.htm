@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>set epsilon, a floating-point constant, to some very small number like 0.0001
+get num, the number to determine its square root
+set a floating-point variable called root to 1.0, this is the initial guess
+set diff to the difference between root * root and num
+set a floating-point variable called level to 1
+while absolute value of diff is greater than epsilon
+     while root * root &lt; num
+
+        increment root by level
+
+/*   square root now somewhere between root and (root-1)
+*/
+     set root to root - level
+     divide level by 10
+     increment root by level
+     set diff to the difference between root * root and num
+</PRE>
+  </BODY>
+</HTML>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<P>
+<ol>
+<li>Composite Pattern
+<table>
+<tr><td>Name in Design Pattern<td>Actual Name
+<td>Primitive<td>LineItem
+<td>Composite<td>Bundle
+<td>Leaf<td>Product
+<td>method()<td>getPrice()
+</table>
+<p>
+<li>Decorator Pattern
+<table>
+<tr><td>Name in Design Pattern<td>Actual Name
+<tr><td>Component<td>LineItem
+<tr><td>ConcreteComponent<td>Product
+<tr><td>Decorator<td>DiscountedItem
+<tr><td>method()<td>getPrice()
+</table>
+<p>
+<li>Observer Pattern
+<table>
+<tr><td>Name in Design Pattern<td>Actual Name
+<tr><td>Subject<td>Invoice
+<tr><td>Observer <td>ChangeListener
+<tr><td>ConcreteObserver <td>Anonymous class that implements ChangeListener
+<tr><td>attach() <td>addChangeListener()
+<tr><td>notify() <td>stateChanged()
+</table>
+<p>
+<li> Iterator Pattern
+<table>
+<tr><td>Name in Design Pattern <td>Actual Name
+<tr><td>Aggregate <td>None
+<tr><td>ConcreteAggregate <td>Invoice
+<tr><td>Iterator <td>Iterator
+<tr><td>ConcreteIterator <td>Anonymous class that implements Iterator
+<tr><td>createIterator() <td>getItems()
+<tr><td>next() <td>next()
+<tr><td>isDone() <td>hasNext()
+<tr><td>currentItem() <td>Not implemented
+</table>
+<p>
+<li>Strategy Pattern
+<table>
+<tr><td>Name in Design Pattern <td>Actual Name
+<tr><td>Context<td>Invoice
+<tr><td>Strategy <td>InvoiceFormatter
+<tr><td>ConcreteStrategy <td>SimpleFormatter
+<tr><td>doWork() <td>formatHeader() formatLineItem() formatFooter()
+</table>
+
+</BODY>
+</HTML>

@@ -1,0 +1,62 @@
+<b>Context</b>
+
+<p>
+<ol>
+   <li>Input data that is to be processed sequentially.
+
+   <li>Each element of the input is to be processed as it is input, but when
+certain elements appear in a certain order, then that subsequence of the
+elements is to be processed as a group.
+</ol>
+
+<b>Solution</b>
+
+<ol>
+   <li> Define a class Group that represents a group of one or more input elements.
+
+   <li> Define a class Grouper that can be used to form groups of input data.
+
+   <li> Grouper must have a reference to the source of the 
+input so that it can access each element of the input in sequence.
+
+   <li> Grouper must have methods that return the current and next group 
+of data elements and that determine if any more groups remain in the input.  
+Call these methods currentGroup(), nextGroup(), and hasNext(),
+respectively.
+</ol>
+
+<b>Example applications:</b>
+
+<ol>
+   <li>
+Counting letters and diphthongs in a text.  For example, the count of 
+<code> "the heat" </code> would be 
+
+<pre> 
+'a' 1
+'e' 2
+'h' 1
+'t' 1
+'th' 1
+</pre>
+
+<p>
+<li>  
+Transliterating alphabets (eg transliterate English letters to the 
+representation of Greek characters in the word processing system TeX):
+<pre> 
+   transliterate("sophos") 
+</pre>
+
+would return 
+
+<pre>
+\sigma\omicron\phi\omicron\sigma
+</pre>
+
+</ol>
+
+ <p> 
+The pattern could be extended to use the template or strategy pattern to 
+generalize how the data groups are processed.
+

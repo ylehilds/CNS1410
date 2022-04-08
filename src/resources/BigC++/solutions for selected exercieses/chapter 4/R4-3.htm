@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>While integers cannot represent numbers as large or as small as can be
+      done with floating point numbers, the difference between successive
+      integers is a single step, that is 1. There are no values in between, so a
+      test for quality will either succeed or fail. By comparison,
+      floating-point numbers are only accurate to within about 14 digits, after
+      which point they are rounded. For example, a test of two identical
+      numbers, e.g. <TT>sqrt(r * r) == r</TT> can fail. The best that can be
+      said is that two floating-point numbers are equivalent within a certain
+      tolerance.</P>
+    
+    <P>To test if an integer equals ten use:</P>
+
+<PRE>   int n;
+   . . .
+   if (n == 10) . . .
+</PRE>
+    
+    <P>To test if a floating point number equals ten use:</P>
+
+<PRE>   float x;
+   . . .
+   if(fabs(x - 10) / max(fabs(x), 10) &lt;= EPSILON ) . . .
+</PRE>
+  </BODY>
+</HTML>

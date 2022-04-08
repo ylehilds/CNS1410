@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+5    11    7     3    5    4    7     11    4    9
+
+            5 11 7 3 5 4 7 11 4 9 
+            merge_sort(a,0,4)
+            merge_sort(a,0,2)
+            merge_sort(a,0,1)
+            merge_sort(a,0,0)
+            merge_sort(a,1,1)
+            merge(a,0,0,1)         a = 5 11 7 3 5 4 7 11 4 9 
+            merge_sort(a,2,2)
+            merge(a,0,1,2)         a = 5 7 11 3 5 4 7 11 4 9 
+            merge_sort(a,3,4)
+            merge_sort(a,3,3)
+            merge_sort(a,4,4)
+            merge(a,3,3,4)         a = 5 7 11 3 5 4 7 11 4 9 
+            merge(a,0,2,4)         a = 3 5 5 7 11 4 7 11 4 9 
+            merge_sort(a,5,9)
+            merge_sort(a,5,7)
+            merge_sort(a,5,6)
+            merge_sort(a,5,5)
+            merge_sort(a,6,6)
+            merge(a,5,5,6)         a = 3 5 5 7 11 4 7 11 4 9 
+            merge_sort(a,7,7)
+            merge(a,5,6,7)         a = 3 5 5 7 11 4 7 11 4 9 
+            merge_sort(a,8,9)
+            merge_sort(a,8,8)
+            merge_sort(a,9,9)
+            merge(a,8,8,9)         a = 3 5 5 7 11 4 7 11 4 9 
+            merge(a,5,7,9)         a = 3 5 5 7 11 4 4 7 9 11 
+            merge(a,0,4,9)         a = 3 4 4 5 5 7 7 9 11 11 
+
+    9    0    11    10    5     8    -7    6    8     7    5
+
+            merge_sort(a,0,5)
+            merge_sort(a,0,2)
+            merge_sort(a,0,1)
+            merge_sort(a,0,0)
+            merge_sort(a,1,1)
+            merge(a,0,0,1)    a = 0 9 11 10 5 8 -7 6 8 7 5 
+            merge_sort(a,2,2)
+            merge(a,0,1,2)    a = 0 9 11 10 5 8 -7 6 8 7 5 
+            merge_sort(a,3,5)
+            merge_sort(a,3,4)
+            merge_sort(a,3,3)
+            merge_sort(a,4,4)
+            merge(a,3,3,4)    a = 0 9 11 5 10 8 -7 6 8 7 5 
+            merge_sort(a,5,5)
+            merge(a,3,4,5)    a = 0 9 11 5 8 10 -7 6 8 7 5 
+            merge(a,0,2,5)    a = 0 5 8 9 10 11 -7 6 8 7 5 
+            merge_sort(a,6,10)    
+            merge_sort(a,6,8)
+            merge_sort(a,6,7)
+            merge_sort(a,6,6)
+            merge_sort(a,7,7)
+            merge(a,6,6,7)    a = 0 5 8 9 10 11 -7 6 8 7 5 
+            merge_sort(a,8,8)
+            merge(a,6,7,8)    a = 0 5 8 9 10 11 -7 6 8 7 5 
+            merge_sort(a,9,10)
+            merge_sort(a,9,9)
+            merge_sort(a,10,10)
+            merge(a,9,9,10)    a = 0 5 8 9 10 11 -7 6 8 5 7 
+            merge(a,6,8,10)    a = 0 5 8 9 10 11 -7 5 6 7 8 
+            merge(a,0,5,10)    a = -7 0 5 5 6 7 8 8 9 10 11 
+</PRE>
+  </BODY>
+</HTML>

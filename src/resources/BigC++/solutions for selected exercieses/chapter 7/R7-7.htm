@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    <TABLE WIDTH="100%">
+      <TR>
+        <TD WIDTH="501"><U>Original</U></TD>
+        <TD WIDTH="479"><U>De Morgan</U></TD>
+      </TR>
+      <TR>
+        <TD WIDTH="501">!(x &gt; 0 &amp;&amp; y &gt; 0)</TD>
+        <TD WIDTH="479">(x &lt;= 0 || y &lt;= 0)</TD>
+      </TR>
+      <TR>
+        <TD WIDTH="501">!(x != 0 || y != 0)</TD>
+        <TD WIDTH="479">(x == 0 &amp;&amp; y == 0)</TD>
+      </TR>
+      <TR>
+        <TD WIDTH="501">! (country == &quot;USA&quot; &amp;&amp; state != &quot;HI&quot;
+        &amp;&amp; state != &quot;AK&quot;)</TD>
+        <TD WIDTH="479">(country != &quot;USA&quot; || state == &quot;HI&quot;
+        || state == &quot;AK&quot;)</TD>
+      </TR>
+      <TR>
+        <TD WIDTH="501">!(x % 4 != 0 || !(x % 100 == 0 &amp;&amp; x % 400 != 0))</TD>
+        <TD WIDTH="479">(x % 4 == 0 &amp;&amp; x % 100 == 0 &amp;&amp; x % 400 != 0)</TD>
+      </TR>
+    </TABLE>
+  </BODY>
+</HTML>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>
+; the first column is the memory location, the second column is the 
+; instruction followed by the operand
+
+00	160	300	; move current A value to memory location 300
+02	45	300	; zero out A
+04	150	300	; store zero in location 300
+
+06	44	10000	; add 10000 to A
+08	160	301	; store the current balance value into location 301
+10	52	300	; zero out A
+
+12	44	2	; add 2 to A
+14	52	301	; move 2 times 10000 into A
+16	160	302	; store the final balance value into location 302
+18	52	300	; zero out A
+
+20	44	1.005	; add 1.005 to A
+22	160	303	; store monthly rate value into location 303
+24	52	300	; zero out A
+
+26	160	304	; store month number value (initially 0) into location 304
+28	52	300	; zero out A
+
+30	161	304	; load up month count into A
+32	44	1	; increment month count
+34	160	304	; store month count
+36	52	300	; zero out A
+38	161	301	; load current balance
+40	52	303	; multiply balance by 1.005
+42	160	301	; store the current balance
+44	45	302	; subtract terminating balance value from A
+46	127	52	; if A is positive, then we have doubled the investment
+
+48	52	300	; otherwise, zero out A...
+50	128	30	; ...then continue with instruction at location 30
+52	52	300	; zero out A - calculate number of years
+54	44	12	; move 12 into A
+56	160	305	; move A value into location 305
+58	161	304	; load up current month count into A
+60	53	305	; divide A by 12
+			; A contains number of years to double investment
+300	0		; zero
+301	10000		; current balance
+302	20000		; terminating balance
+303	1.005		; monthly rate
+304	0		; month count
+305	12		; number of months in a year
+
+</PRE>
+  </BODY>
+</HTML>

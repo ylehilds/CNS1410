@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    <UL>
+      <LI>Missing parentheses <TT>(quarters &gt; 0)</TT>, also there is no
+        <TT>then</TT> statement in C++ </LI>
+      <LI>Unbalanced parentheses around condition, use: <TT>if (1 + x &gt;
+        pow(x, sqrt(2))) y = y + x;</TT> </LI>
+      <LI><TT> (x = 1)</TT> and <TT>(x = 2)</TT> are assignments, not
+        comparisons, use <TT>(x == 1)</TT> and <TT> (x == 2)</TT> instead.
+      </LI>
+      <LI>Doesn't make sense to form <TT>and</TT> of <TT>x</TT> and <TT>y</TT>.
+        Should be <TT>if (x == 0 and y == 0)</TT></LI>
+      <LI>Invalid condition, use <TT>if(1 &lt;= x and x &lt;= 10)</TT>
+        instead. </LI>
+      <LI>There is no way for the condition to evaluate true. s cannot
+        simultaneously be not equal to nick, penn, dime or quar. If s must be
+        one of the choices, use the following instead:
+
+<PRE>if (s != &quot;nick&quot; and s != &quot;penn&quot; and s != &quot;dime&quot; and s != &quot;quar&quot;) <BR>cout &lt;&lt; &quot;Input error !&quot;);</PRE> </LI>
+      
+      <LI> Can't form <TT>or</TT> of two strings. Instead, use
+
+<PRE>
+if (input == &quot;N&quot; or input == &quot;NO&quot;) 
+   . . .</PRE> </LI>
+      
+      <LI>Attempts to use the value for x read from a failed input stream. Use
+        <TT>if (!cin.fail()) ...</TT></LI>
+      <LI>Braces are needed to make the test for country == &quot;China&quot;
+        work properly. Use the following insteadl
+
+<PRE> language = &quot;English&quot;; 
+ if (country == &quot;USA&quot;) 
+	{  if ( state == &quot;PR&quot;)
+       language = &quot;Spanish&quot;; 
+	} 
+ else if (country == &quot;China&quot;) 
+  	 language = &quot;Chinese&quot;;</PRE> </LI>
+    </UL>
+  </BODY>
+</HTML>

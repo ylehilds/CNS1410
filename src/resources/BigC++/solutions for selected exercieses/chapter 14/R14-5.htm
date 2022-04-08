@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<TITLE>R17-3</TITLE> <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1"> 
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<p>We'll show that the algorithm has the following property:
+<p>It transforms a sequence of the form
+<p>(any elements) | (ascending sequence)
+<p>into
+<p>(any elements) | (reversed sequence)
+<p>going through all the permutations of the tail sequence
+<p>For example, if the algorithm is launched on the sequence
+<p>2 | 1 3 4
+<p>then it transforms it in 5 steps to the sequence
+<p>2 | 4 3 1
+<p>Let us prove this by induction. It is clear that the algorithm does
+just that when the length of the ascending tail sequence is 2.
+<p>Now suppose we have a ascending tail sequence, like this:
+<p>a<sub>0</sub> ... a<sub>k</sub> ... a<sub>n-1</sub>
+<p>where a<sub>k</sub> &lt; a<sub>k+1</sub> &lt; ... &lt; a<sub>n-1</sub>.
+<p>By induction, the algorithm first permutes the shorter tail sequence a<sub>k+1</sub> ... a<sub>n-1</sub> until
+it is completely reversed to 
+<p>a<sub>0</sub> ... a<sub>k</sub> a<sub>n-1</sub> ... a<sub>k+1</sub>.
+<p>Now the algorithm picks the smallest element larger than a<sub>k</sub> and
+swaps it (which keeps the tail sequence descending) and then reverses the tail
+which makes it ascending. Again, by the inductive assumption, the shorter tail
+sequence is now being subjected to all of its permutations until it is 
+reversed.
+<p>To complete the argument, observe that after each reversal of the shorter tail a larger 
+element is extracted from the shorter tail. Ultimately, the largest element is
+extracted and the shorter tail is reversed one last time, leading to the reversal of the longer tail.
+</BODY>
+</HTML>

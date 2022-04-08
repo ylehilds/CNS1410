@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>If the two vectors have the same size, in a while loop, test that each
+      successive pair of elements is equal. </P>
+
+<PRE>
+bool is_equal(vector&lt;int&gt; a1, vector&lt;int&gt; a2)
+{  
+   if (a1.size() != a2.size()) return false;
+   int i;
+   for (i = 0; i &lt; a1.size(); i++)
+      if (a1[i] != a2[i]) return false;
+   return true;
+}
+</PRE>
+    
+    <P>Use the assignment statement.</P>
+
+<PRE>
+   vector&lt;int&gt; a(2);
+   vector&lt;int&gt; b(4);
+   . . .
+   a = b;
+</PRE>
+    
+    <P>Assign 0 to each element in the array.</P>
+
+<PRE>
+  for (int i = 0; i &lt; a.size(); i++)
+     a[i] = 0;
+
+</PRE>
+    
+    <P>Assign an empty vector of the same type to an existing vector. </P>
+
+<PRE>  
+  vector&lt;int&gt; a(2);
+  . . .
+  a = vector&lt;int&gt;(); // empty a
+</PRE>
+  </BODY>
+</HTML>

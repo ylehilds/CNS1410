@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>In C++ <TT>if/else if /else</TT> statements are used to express a
+      multiple alternative, in which exactly one from a mutually exclusive set
+      of choices is selected to be executed. Nested <TT>if</TT> statements are
+      used to express a selection from multiple alternatives when there are
+      multiple conditions for each selection.</P>
+
+<PRE>
+/* value of integer choice used to select one of four possible values 
+for x */
+if (choice == 1)  x = n;
+else if (choice == 2) x = n * n;
+else if (choice == 3) x = n * n * n;
+else x = 0;  
+</PRE>
+
+<PRE>
+/* value of integer choice and value of boolean available
+used to select one of four possible values for x */
+
+if (choice == 1)
+{  
+   if (positive)
+      x = n;
+   else
+      x = -n;
+}      
+   
+else  /* (choice == 2) */
+{  
+   if (positive)
+      x = n * n;
+   else
+      x = -n * n;
+}      
+</PRE>
+  </BODY>
+</HTML>

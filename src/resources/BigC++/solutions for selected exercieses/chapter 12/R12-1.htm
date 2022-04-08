@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+
+<PRE>ofstream output_data;
+output_data.open(&quot;Hello.txt&quot;);
+output_data &lt;&lt; &quot;Hello, World!&quot;;
+output_data.close();
+ifstream input_data;
+input_data.open(&quot;Hello.txt&quot;);
+string s;
+getline(input_data, s);
+input_data.close();
+</PRE>
+  </BODY>
+</HTML>

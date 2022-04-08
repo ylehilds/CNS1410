@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN"
+ "hmpro4.dtd">
+
+<HTML>
+  
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  
+  <BODY>
+    
+    <P>No, not every data field needs an accessor. For example, the <TT>istream</TT>
+      class has a number of data fields that make input possible. You don't need
+      to know about them in order to read input. Therefore, you don't need an
+      accessor.</P>
+    
+    <P>Even if a class has an accessor, it doesn't need a mutator. For example,
+      if an employee object has a social security number and that number is
+      never supposed to change, there is no point in providing a <TT>setSSN</TT>
+      accessor. Just set it once in the constructor and rest assured it stays
+      unchanged from then on.</P>
+  </BODY>
+</HTML>
