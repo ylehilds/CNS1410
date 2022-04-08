@@ -1,0 +1,90 @@
+[Project]
+name=Project_12
+type=5
+defaultConfig=0
+
+[Debug]
+// compiler 
+workingDirectory=
+arguments=
+intermediateFilesDirectory=Debug
+outputFilesDirectory=Debug
+compilerPreprocessor=HAVE_W32API_H,__WXMSW__,__WXDEBUG__
+extraCompilerOptions=-Wno-ctor-dtor-privacy
+compilerIncludeDirectory=mswd
+noWarning=0
+defaultWarning=0
+allWarning=1
+extraWarning=0
+isoWarning=0
+warningsAsErrors=0
+debugType=1
+debugLevel=2
+exceptionEnabled=0
+runtimeTypeEnabled=0
+optimizeLevel=0
+
+// linker
+libraryPath=
+outputFilename=Debug\Project_12.exe
+libraries=wxmsw26d_core, wxbase26d, wxtiffd, wxjpegd, wxpngd , wxzlibd, wxregexd, wxexpatd, kernel32, user32, gdi32, comdlg32, winspool, winmm, shell32, comctl32, ole32, oleaut32, uuid, rpcrt4, advapi32, wsock32, odbc32
+extraLinkerOptions=-mthreads, -Wl,--subsystem,windows -mwindows
+ignoreStartupFile=0
+ignoreDefaultLibs=0
+stripExecutableFile=0
+
+// archive
+extraArchiveOptions=
+
+//resource
+resourcePreprocessor=__WXMSW__,__WXDEBUG__
+resourceIncludeDirectory=mswd
+extraResourceOptions=
+
+[Release]
+// compiler 
+workingDirectory=
+arguments=
+intermediateFilesDirectory=Release
+outputFilesDirectory=Release
+compilerPreprocessor=HAVE_W32API_H,__WXMSW__
+extraCompilerOptions=-Wno-ctor-dtor-privacy
+compilerIncludeDirectory=msw
+noWarning=0
+defaultWarning=0
+allWarning=1
+extraWarning=0
+isoWarning=0
+warningsAsErrors=0
+debugType=0
+debugLevel=0
+exceptionEnabled=0
+runtimeTypeEnabled=0
+optimizeLevel=2
+
+// linker
+libraryPath=
+outputFilename=Release\Project_12.exe
+libraries=wxmsw26_core, wxbase26, wxtiff, wxjpeg, wxpng, wxzlib, wxregex, wxexpat, kernel32, user32, gdi32, comdlg32, winspool, winmm, shell32, comctl32, ole32, oleaut32, uuid, rpcrt4, advapi32, wsock32, odbc32
+extraLinkerOptions=-mthreads, -Wl,--subsystem,windows -mwindows
+ignoreStartupFile=0
+ignoreDefaultLibs=0
+stripExecutableFile=1
+
+// archive
+extraArchiveOptions=
+
+//resource
+resourcePreprocessor=__WXMSW__
+resourceIncludeDirectory=msw
+extraResourceOptions=
+
+[Source]
+1=main.cpp
+2=implementation.cpp
+[Header]
+[Resource]
+[Other]
+[History]
+implementation.cpp,45
+main.cpp,233
