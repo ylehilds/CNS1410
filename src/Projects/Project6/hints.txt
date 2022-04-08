@@ -1,0 +1,9 @@
+Hints for Project Six
+In this project, you need to do extract the text from a text field and convert it into a double, before you can do any arithmetic on it. The following code will do this for you. In this example, theCText is a wxTextCtrl into which the user has typed a number. The function GetValue( ) extracts the string value from the wxTextCtrl. This value is of type wxString. The function ToDouble( ) converts the wxString to a double. The function returns a boolean, TRUE if the conversion can be done. Otherwise it returns a FALSE. You can check this value to make sure that your conversion works. 
+
+    double tempC;
+    theCText->GetValue( ).ToDouble(&tempC); 
+
+Laying out a GUI interface by hand requires some trial and error. I often use some paper with a grid on it to lay out my GUI before I start to code. 
+
+For your first wxWidgets project, you might consider starting with some of the sample code on the course web site. This will give you a really good feeling for the structure of the code. 

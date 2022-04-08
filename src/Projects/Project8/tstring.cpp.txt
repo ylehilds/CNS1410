@@ -1,0 +1,145 @@
+#include "tstring.h"
+
+// Implementation of the TString class
+
+// The default constructor - nothing there
+TString::TString( )
+{
+   theStr = NULL;
+   theStrLen = 0;
+}
+
+// Parameterized constructor
+TString::TString( const char* s)
+{
+   // make sure pointer is valid and points to real chars
+   if ( s != NULL && *s != '\0')
+   {
+	   theStrLen = strlen(s);            // note that strlen does not count '\0'
+	   theStr = new char[theStrLen + 1]; // so account for it here with +1
+	   strcpy(theStr, s);
+   }
+}
+
+// Destructor
+TString::~TString( )
+{
+	// Check to see if pointer is null, if not, delete the char array
+	if ( theStr != NULL )
+	   delete [] theStr;
+}
+
+//Copy Constructor
+// Allocates storage for characters and does a deep copy
+TString::TString(const TString& b)
+{
+   // Be sure that the string is not null
+   if ( b.theStr != NULL )
+   {
+	   // allocate storage and copy char array
+	   theStr = new char[strlen(b.theStr) + 1];
+	   strcpy(theStr, b.theStr);
+	   theStrLen = b.theStrLen;
+   }
+   else  // nothing to copy
+   {
+	   theStr = NULL;
+	   theStrLen = 0;
+   }
+}
+
+
+// The overloaded assignment operator
+TString& TString::operator= (const TString& b)
+{
+	// test for self-copy
+	if (this == &b)
+	   return *this;
+
+	// Consider two cases.
+	if (theStrLen >= b.theStrLen)  // there is room
+	{
+		if (b.theStr != NULL)
+		   strcpy(theStr, b.theStr);
+		else // copying a null string
+		   theStr = NULL;
+
+		theStrLen = b.theStrLen;
+		return *this;
+	}
+	else  // not enough room
+	{
+		// delete the original char array
+		delete [] theStr;
+
+		theStrLen = b.theStrLen;
+		if (theStrLen > 0) // okay, something to copy
+		{
+		   // allocate the storage and copy
+		   theStr = new char[theStrLen + 1];
+		   strcpy(theStr, b.theStr);
+	   }
+	   else // nothing to copy
+	      theStr = NULL;
+
+	   return *this;
+   }
+}
+
+   // The overloaded += operator
+   TString& TString::operator+= (const TString& b)
+   {
+	   // check to see if there is something to add
+	   if (b.theStrLen != 0)
+	   {
+		   // calculate the new length and allocate space
+	      theStrLen = b.theStrLen + theStrLen;
+	      char* newStr = new char[theStrLen + 1];
+
+	      // check to see if we have a null string before copying
+	      if (this->theStrLen != 0)
+	         strcpy(newStr, theStr);
+
+	      else // null string
+	         *newStr = '\0';
+
+	      // now cat the other string
+	      strcat(newStr, b.theStr);
+	      delete [] theStr; // delete the old string
+	      theStr = newStr; // and use the newly allocated one
+      }
+      return *this;
+   }
+
+   // Now implement = in terms of +=
+   // It is a nonmember function
+   // This allows the compiler to do datatype conversions on the 1st arg
+   TString operator+(const TString& first, TString& second)
+   {
+	   TString result = first;  // calls the overloaded assignment operator
+	   result += second;  // calls the overloaded +=
+	   return result;
+   }
+
+   TString& TString::toLower( )
+   {
+	   // make sure we have valid data to work on
+	   if (theStr != NULL && *theStr != '\0')
+	   {
+		   char* p = theStr;
+		   while (*p != '\0')
+		   {
+			   *p = tolower(*p);
+			   ++p;
+		   }
+	   }
+	   return *this;
+   }
+
+   ostream& operator<<(ostream& out, const TString& s)
+   {
+	   if (s.c_str( ) != NULL)
+	      out << s.c_str( );
+	   return out;
+   }
+

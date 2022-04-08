@@ -1,0 +1,13 @@
+#include <string>
+using namespace std;
+
+class Stuff
+{
+	private:
+	   string theStuff;
+	public:
+	   Stuff( );
+	   Stuff( string s);
+	   string getStuff( );
+	   void setStuff( string );
+};

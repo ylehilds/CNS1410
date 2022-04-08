@@ -1,0 +1,52 @@
+// Example String class
+// Demonstrates class engineering concepts
+// Based on example in C++ Effective Object Oriented Software Construction
+// by Kayshav Dattatri
+// -------------------------------------------------------------------------
+
+#include <iostream>
+#include <string>
+#include <stdlib>
+#include <ctype>
+using namespace std;
+
+class TString
+{
+	public:
+	   // Constructor for an empty string
+	   TString( );
+
+	   // Constructor - copy the char array s into the string
+	   TString( const char* );
+
+	   //Destructor
+	   ~TString( );
+
+	   // Copy Constructor
+	   TString( const TString& );
+
+
+	   // Overloaded Assignment Operator
+	   TString& operator=( const TString& );
+
+	   // Overloaded += operator
+	   TString& operator+=( const TString& );
+
+	   // toUpper function - converts all to lower case
+	   TString& toLower( );
+
+	   const char* c_str( ) const {return theStr;}
+
+	private:
+       char* theStr;  		// pointer to the actual charaters
+	   unsigned theStrLen;	// length of it
+};
+
+// Overload _ operator as a non-member
+TString operator+ (const TString& , const TString& );
+
+// overloaded << operator - a nonmember
+ostream& operator<<(ostream& out, const TString& s);
+
+
+

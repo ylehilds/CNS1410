@@ -1,0 +1,4 @@
+// The implementation file is empty
+// This is a class template
+// The implementation code is in-line in the header file
+

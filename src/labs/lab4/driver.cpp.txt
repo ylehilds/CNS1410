@@ -1,0 +1,86 @@
+// File: Driver.cpp
+// Author: Roger deBry
+// Course: cns 1350
+// Date Last Modified: 9/5/03
+// Content: Driver to test shape classes with persistence
+// -------------------------------------------------------
+
+#include <iostream>
+#include <conio>
+#include <fstream>
+using namespace std;
+
+#include "shape.h"
+
+int main ( )
+{
+   Shape* shapes[2];
+
+   shapes[0] = new Circle  ( "red", 5, 4, 3 );
+   shapes[1] = new Square ( "blue", 8, 4, 4 );
+
+   ofstream outFile ("c:\\shape_data.txt");
+   for (int i = 0; i < 2; i++)
+   {
+	    shapes[i]->writeFile ( outFile );
+   }
+   outFile.close ( );
+
+   int type;
+
+   Shape* newShapes[2];
+   ifstream inFile;
+   inFile.open ("c:\\shape_data.txt");
+   int index = 0;
+
+   while ( !inFile.eof( ) )
+   {
+
+      inFile >> type;
+      if ( !inFile )
+      {
+		  if (inFile.eof( ) )
+		     break;
+		  else
+		  {
+		     cout << "File error...\n";
+		     break;
+		 }
+	  }
+	  cout << "Reading object...\n";
+	  switch( type)
+	  {
+		  case 1:
+         {
+            cout << "It is a circle!\n";
+            newShapes[index] = new Circle( );
+            newShapes[index]->readFile( inFile );
+            index++;
+            break;
+         }
+
+         case 2:
+         {
+
+            cout << "It is a Rectangle...\n";
+            newShapes[index] = new Square( );
+            newShapes[index]->readFile(inFile);
+            index++;
+            break;
+		}
+		default:
+		   cout << "\nBad type code ... can't complete execution";
+		   break;
+
+      } // end of switch
+   } // end of while loop - done reading file
+
+   outFile.close( );
+
+   for (int i = 0; i < 2; i++)
+   {
+	   cout << newShapes[i]->toString( );
+   }
+   getch( );
+   return 0;
+}

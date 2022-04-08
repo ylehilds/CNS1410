@@ -1,0 +1,68 @@
+// File: Shape.h
+// Author: Roger deBry
+// Course: CNS 1350
+// Date Last Modified: January 16, 2004
+// Contains: Shape classes
+// --------------------------------------
+
+#ifndef SHAPES_H
+#define SHAPES_H
+
+// Base Shape class
+#include <string>
+#include <fstream>
+#include <sstream>
+using namespace std;
+
+class Shape
+{
+	protected:
+	   string color;
+	   int posX;
+	   int posY;
+	   virtual double getArea( )=0;
+
+
+	public:
+	   Shape ( );
+	   Shape ( string, int, int );
+	   virtual ~Shape( );
+	   virtual void writeFile ( ofstream & );
+	   virtual void readFile ( ifstream & );
+	   virtual string toString ( );
+};
+
+// Circle shape
+class Circle : public Shape
+{
+	private:
+	   int radius;
+	   double getArea( );
+
+	public:
+	   Circle ( );
+	   Circle ( string, int, int, int );
+	   ~Circle( );
+	   void writeFile ( ofstream & );
+	   void readFile ( ifstream & );
+	   string toString ( );
+};
+
+
+// Square shape
+class Square : public Shape
+{
+	private:
+	   int side;
+	   double getArea( );
+
+	public:
+	   Square( );
+	   Square ( string, int, int, int );
+	   ~Square( );
+	   void writeFile ( ofstream & );
+	   void readFile ( ifstream & );
+	   string toString( );
+};
+
+#endif

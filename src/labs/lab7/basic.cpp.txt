@@ -1,0 +1,124 @@
+// Basic Window Program using an external object
+// Adapted from David Beech's tutorial - www.bzzt.net/~wxwindows
+// CNS 1350
+// Roger deBry
+// January 2004
+
+#include <wx/wxprec.h>  // you get compile errors if this is not here
+#include <wx/wx.h>
+#include <wx/stattext.h>
+#include <wx/button.h>
+#include <wx/textctrl.h>
+
+#include "basic.h"
+
+
+// This macro creates the application object and sets the main entry point
+IMPLEMENT_APP(BasicApplication)
+
+// Create a Stuff object.
+// It will be a global variable, so
+//functions in the GUI can access it
+Stuff myStuff("This is my stuff!");
+
+// OnInit function
+// Creates the frame object and initializes it
+bool BasicApplication::OnInit( )
+{
+	BasicFrame *frame = new BasicFrame("Frame with Text Control", 150, 150, 450, 300);
+	frame->Show(true);
+	SetTopWindow(frame);
+	return TRUE;
+}
+
+
+BasicPanel::BasicPanel(wxWindow* parent) : wxPanel(parent) // use all of the defaults
+{
+		   // Create the get Button Control
+		   getButton = new wxButton(this, BUTTON_GET, "Get It", wxPoint(20, 20),
+		                            wxSize(50, 30));
+		   putButton = new wxButton(this, BUTTON_PUT, "Store it", wxPoint(80, 20),
+		                            wxSize(50, 30));
+
+		   // Create some labels
+           labelOne = new wxStaticText(this, -1, "Source:", wxPoint(20, 70));
+		   labelTwo = new wxStaticText(this, -1, "Target:", wxPoint(20, 100));
+
+		   // Create the text controls
+		   theInputText = new wxTextCtrl( this, -1, "", wxPoint(80, 70), wxSize(200, 20));
+		   theOutputText = new wxTextCtrl(this, -1, "some stuff", wxPoint(80, 100), wxSize(200, 20), wxTE_READONLY);
+
+}
+
+BasicPanel::~BasicPanel( ) {}
+
+
+BasicFrame::BasicFrame(const wxChar *title, int xpos, int ypos, int width, int height)
+   : wxFrame( ( wxFrame *) NULL, -1, title, wxPoint(xpos, ypos), wxSize(width, height))
+   {
+
+
+	    // Place the panel on the frame
+	    thePanel = new BasicPanel( this );
+
+	    // Create the menu
+	    fileMenu = new wxMenu;
+	    fileMenu->Append(BASIC_ABOUT, "&About", "Who wrote this?");
+	    fileMenu->AppendSeparator();
+	    fileMenu->Append(BASIC_EXIT, "E&xit", "Time to quit?");
+
+	    menuBar = new wxMenuBar;
+	    menuBar->Append(fileMenu, "&File");
+	    SetMenuBar(menuBar);
+	    CreateStatusBar(3);
+   }
+
+BasicFrame::~BasicFrame( ) {}
+
+// The event table for the Frame class -- defined using macros
+// the event name ( the id of the generator, the owner of the event handler::the handler)
+BEGIN_EVENT_TABLE (BasicFrame, wxFrame)
+   EVT_MENU ( BASIC_EXIT, BasicFrame::OnExit )
+   EVT_MENU ( BASIC_ABOUT, BasicFrame::OnAbout )
+   //EVT_BUTTON ( BUTTON_EXIT, BasicPanel::OnPush )
+END_EVENT_TABLE()
+
+// The event table for the Panel Class
+BEGIN_EVENT_TABLE (BasicPanel, wxPanel)
+   EVT_BUTTON ( BUTTON_GET, BasicPanel::OnGetPush )
+   EVT_BUTTON ( BUTTON_PUT, BasicPanel::OnPutPush )
+END_EVENT_TABLE( )
+
+void BasicFrame::OnAbout (wxCommandEvent &event )
+{
+	wxString t = TITLE;
+	t.append ( _T("\nDB 2001"));
+
+	wxMessageDialog aboutDialog( this, t, "About Basic", wxOK | wxCANCEL);
+	aboutDialog.ShowModal();
+}
+
+void BasicFrame::OnExit (wxCommandEvent &event)
+{
+	Close(TRUE);
+}
+
+void BasicPanel::OnGetPush (wxCommandEvent &event)
+{
+	wxString userData;
+	userData = (myStuff.getStuff( )).c_str( );
+	theOutputText->Clear( );
+	theInputText->Clear( );
+	(*theOutputText) << userData;
+
+}
+
+void BasicPanel::OnPutPush(wxCommandEvent &event)
+{
+	wxString userData;
+	userData = theInputText->GetLineText(0);
+	theInputText->Clear( );
+	string forObject = userData.c_str( );
+	myStuff.setStuff(forObject);
+}
+

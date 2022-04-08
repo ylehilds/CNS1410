@@ -1,0 +1,85 @@
+// Basic Window Program with xwWindows
+// Creates a basic window a Button control
+// Read and Write a text control
+// CNS 1350
+// Roger deBry
+// January 2004
+
+#include "stuff.h"
+// use enumerations to generate ids - these are used in event handling
+enum
+{
+	BASIC_EXIT = 1,
+	BASIC_ABOUT = 2,
+	BUTTON_GET = 3,
+	BUTTON_PUT
+};
+
+// constant
+static const wxChar *TITLE = _T("Using an external object");
+
+
+// First of all we need an Application class
+// Provides the main application loop
+// Inherits from wxApp
+class BasicApplication : public wxApp
+{
+	public:
+	   virtual bool OnInit( );
+	private:
+};
+
+
+// The first control fills the frame, so put a panel on the frame
+// We will put our controls on the panel
+// In this case, a text Control goes on the panel
+class BasicPanel : public wxPanel
+{
+	private:
+	   wxArrayString items;
+	public:
+	   BasicPanel( wxWindow* parent);
+	   ~BasicPanel( );
+	   wxStaticText* labelOne;
+	   wxStaticText* labelTwo;
+	   wxTextCtrl* theInputText;
+	   wxTextCtrl* theOutputText;
+	   wxButton* putButton;
+	   wxButton* getButton;
+	   void OnGetPush(wxCommandEvent&); // the event handler for the get button
+	   void OnPutPush(wxCommandEvent&); // the event handler for the put button
+
+
+    // Each class needs its own event table if it has
+    // event handlers -- also see the BEGIN_EVENT_TABLE macro for this
+    // class in the .cpp file
+    DECLARE_EVENT_TABLE()
+};
+
+// Then we define a basic Frame class - inherits from wxFrame
+// Provides all of the basic windowing functions
+// Define a constructor that takes a title, position and size of the window
+class BasicFrame : public wxFrame
+{
+	public:
+	   BasicFrame( const wxChar *title, int xpos, int ypos, int width, int height);
+	   ~BasicFrame( );
+	   wxPanel *thePanel;
+	   wxMenuBar *menuBar;
+	   wxMenu *fileMenu;
+
+	   // callbacks
+	   void OnAbout(wxCommandEvent &event);
+	   void OnExit(wxCommandEvent &event);
+
+
+	// Because there are events that come from the Frame
+	DECLARE_EVENT_TABLE()
+};
+
+
+
+DECLARE_APP(BasicApplication);
+
+
+

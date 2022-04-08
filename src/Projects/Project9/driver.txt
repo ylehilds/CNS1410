@@ -1,0 +1,34 @@
+#include "s_array.h"
+#include <iostream>
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+   SafeArray<int> a(5);
+   a[0] = 5;
+   a[1] = 15;
+   a[2] = 9;
+   a[3] = 12;
+   a[4] = 21;
+   cout << a[0] << endl;
+   cout << a[4] << endl;
+   int b;
+   try   // test out of bounds error
+   {
+	   b = a[6];
+	   cout << b << endl;
+   }
+   catch ( OobException e)
+   {
+	   cout << e.what( );
+   }
+   
+   // use an iterator
+for (Iterator<int> i = a.begin( ); i != a.end( ); i++)
+   cout << *i << endl;
+
+   system("PAUSE");
+
+return 0;
+}
+

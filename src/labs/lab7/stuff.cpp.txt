@@ -1,0 +1,21 @@
+#include "stuff.h"
+
+Stuff::Stuff( )
+{
+	theStuff = "none";
+}
+
+Stuff::Stuff( string s )
+{
+	theStuff = s;
+}
+
+string Stuff::getStuff( )
+{
+	return theStuff;
+}
+
+void Stuff::setStuff( string s )
+{
+	theStuff = s;
+}

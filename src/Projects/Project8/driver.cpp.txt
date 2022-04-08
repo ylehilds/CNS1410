@@ -1,0 +1,20 @@
+#include <iostream>
+#include <conio>
+using namespace std;
+
+#include "tstring.h"
+
+int main ( )
+{
+	TString t1 = "Hello world!";
+	TString t2("How is this");
+
+	TString t3 = t2;
+
+	cout << t1 << '\n' << t2;
+	cout << '\n' << t3;
+
+
+	getch( );
+	return 0;
+}

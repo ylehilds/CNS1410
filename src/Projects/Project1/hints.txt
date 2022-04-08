@@ -1,0 +1,12 @@
+Hints for Project Eleven
+Consider the case where the user gives you the string, "I love New York". The character array containing this string will look something like
+
+
+
+
+
+We know that a C-style string is terminated with a null terminating character, '\0'. 
+
+We know that the stream insertion operator will take a pointer to a char array and output all of the characters up to, but not including the null terminating character. 
+
+Given that you had a pointer to the character 'I' in the character array above, what would happen if you replaced the space character following the letter 'I' with a null terminating character, and then used the stream insertion operator to output the array? 

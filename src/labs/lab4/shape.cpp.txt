@@ -1,0 +1,133 @@
+// File: Shape.cpp
+// Author: Roger deBry
+// Course: CNS 1350
+// Date Last Modified: September 8, 2003
+// Contains: Shape class implementations
+// --------------------------------------
+
+#include "shape.h"
+
+const double PI = 3.14159;
+
+Shape::Shape ( )
+{
+   color = "none";
+   posX = 0;
+   posY = 0;
+}
+
+
+Shape::Shape ( string colorParam, int xParam, int yParam )
+{
+   color = colorParam;
+   posX = xParam;
+   posY = yParam;;
+}
+
+Shape::~Shape( ) { }
+
+
+void Shape::writeFile (ofstream& theFile)
+{
+    theFile << color << " ";
+    theFile << posX << ' ' << posY << '\n'; // terminate record with a new line
+}
+
+void Shape::readFile ( ifstream& theFile )
+{
+	theFile >> color;
+	theFile >> posX;
+	theFile >> posY;
+}
+
+
+string Shape::toString ( )
+{
+   ostringstream ostr;
+   ostr << "My color is " << color << ".\n";
+   ostr << "I am at position (" << posX << ',' << posY << ").\n";
+   ostr << "My area is " << getArea( ) << " square inches.\n\n";
+   return ostr.str( );
+
+}
+
+Circle::Circle( )
+{
+	radius = 0;
+}
+
+Circle::Circle( string colParam, int xParam, int yParam, int radParam )
+    : Shape ( colParam, xParam, yParam )
+{
+	radius = radParam;
+}
+
+Circle::~Circle( ) { }
+
+void  Circle::writeFile (ofstream& theFile)
+{
+
+	theFile << "1 "; // type code for a circle = 1
+	theFile << radius << ' ';
+	this->Shape::writeFile( theFile );
+}
+
+void Circle::readFile (ifstream& theFile)
+{
+	theFile >> radius;
+	this->Shape::readFile( theFile );
+}
+
+string Circle::toString( )
+{
+	ostringstream ostr;
+	ostr << "I am a Circle, with a radius of " << radius << " inches.\n";
+	ostr << this->Shape::toString( );
+	return ostr.str( );
+}
+
+double Circle::getArea( )
+{
+	return radius * radius * PI;
+}
+
+Square::Square( )
+{
+	side = 0;
+}
+
+Square::Square (string colParam, int xParam, int yParam, int sideParam )
+   : Shape ( colParam, xParam, yParam )
+{
+	side = sideParam;
+}
+
+Square::~Square( ) { }
+
+void Square::writeFile(ofstream& theFile)
+{
+	theFile << "2 "; // type code for square = 1
+	theFile << side << ' ';
+	this->Shape::writeFile( theFile );
+
+}
+
+void Square::readFile(ifstream& theFile)
+{
+	theFile >> side;
+	this->Shape::readFile(theFile);
+
+}
+
+string Square::toString( )
+{
+	ostringstream ostr;
+	ostr << "I am a Square with a side of " << side << " inches.\n";
+	ostr << this->Shape::toString( );
+	return ostr.str( );
+}
+
+double Square::getArea( )
+{
+	return side * side;
+}

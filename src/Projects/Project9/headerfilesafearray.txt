@@ -1,0 +1,114 @@
+// Safe Array class template
+// Allows the creation of a safe array (won't overflow the boundary)
+// Roger deBry
+// CNS 1350
+// ------------------------------------------------------------------
+
+#include <string>
+using namespace std;
+
+class OobException
+{
+private:
+	string message;
+public:
+	OobException( ) : message("Tried to access an index outside the array boundaries\n")
+	{ };
+	string what( ) {return message;}
+};
+
+// Iterator class template
+template <class T>
+	class Iterator
+	{
+	private:
+		T* position;
+public:
+	Iterator( )
+	{
+		position = NULL;
+	}
+	
+	Iterator<T> operator++(int)
+	{
+		Iterator<T> t = *this;
+		position++;
+		return t;
+	}
+	
+	T operator*( ) const
+	{
+		return *position;
+	}
+	
+	bool operator== (const Iterator<T>&  b) const
+	{
+		if ( position == b.position )
+			return true;
+		else
+			return false;
+	}
+	
+	bool operator!= (const  Iterator<T>&  b) const
+	{
+		if ( position != b.position )
+			return true;
+		else
+			return false;
+	}
+	
+	void setPosition(T* index)
+	{
+		position = index;
+	}
+};
+
+template <class T>
+class SafeArray
+{
+   private:
+      int size;         // the size of the array
+      T* sa;             // need a pointer of type T
+   public:
+      // the constructor
+      // dynamically allocate storage for an array
+      // of the given size. Store its address in sa
+      SafeArray( int cap )
+      {
+         sa = new T[cap];
+         size = cap;
+      }
+
+      // the destructor
+      // delete the array
+      ~SafeArray( )
+      {
+         delete[ ] sa;
+      }
+
+      T& operator[]( int index)
+      {
+         if ( index >= size  || index < 0)
+         {
+            // handle the case where the index is outside of the array
+			 throw OobException( );
+         }
+         else
+            return sa[index];
+      }
+	  
+	  const Iterator<T> begin( )
+	  {
+		  Iterator<T> anIterator;
+		  anIterator.setPosition(sa);
+		  return anIterator;
+	  }
+	  
+	  const Iterator<T> end( ) 
+	  {
+		  Iterator<T> anIterator;
+		  anIterator.setPosition(sa + size);
+		  return anIterator;
+	  }
+};
+

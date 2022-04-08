@@ -1,0 +1,70 @@
+Employee Number: 1
+Name: Ziggy Zabriskie
+Address: 1200 Mudflats Road.
+Phone Number: (202) 123-4567
+Title: CEO
+Net Pay: 6726
+
+Employee Number: 2
+Name: Ed leCount
+Address: 1206 Mudflats Road.
+Phone Number: (202) 123-4551
+Title: CFO
+Net Pay: 5380.8
+
+Employee Number: 3
+Name: Mary leCount
+Address: 1206 Mudflats Road.
+Phone Number: (202) 123-4551
+Title: Data Entry
+Net Pay: 1345.2
+
+Employee Number: 4
+Name: Dan Developer
+Address: 603 East Main Street.
+Phone Number: (202) 121-9000
+Title: developer
+Net Pay: 4035.6
+
+Employee Number: 5
+Name: Martha vonSales
+Address: 34 Drury Lane
+Phone Number: (202) 345-9876
+Title: sales
+Net Pay: 8071.2
+
+Employee Number: 6
+Name: Jimmy Peabody
+Address: 19 Easy Street
+Phone Number: (202) 345-1616
+Title: sales
+Net Pay: 6726
+
+Employee Number: 7
+Name: Bob Roberts
+Address: 212 High Street
+Phone Number: (202) 347-6325
+Title: sales
+Net Pay: 2690.4
+
+Employee Number: 8
+Name: Dan Diver
+Address: 27 Ocean Drive
+Phone Number: (202) 122-3423
+Title: guide
+Net Pay: 1256.97
+
+Employee Number: 9
+Name: Sally Scuba
+Address: 98 SeaBreeze Lane
+Phone Number: (202) 126-3127
+Title: guide
+Net Pay: 1319.41
+
+Employee Number: 10
+Name: Bill Reef
+Address: 121 Ocean Bottom Boulevard
+Phone Number: (202) 232-9098
+Title: guide
+Net Pay: 525.625
+
